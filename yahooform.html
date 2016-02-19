@@ -5,11 +5,10 @@
 	<meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-        <script src="http://www.marghoobsuleman.com/misc/jquery.js"></script>
+       
 <!-- <msdropdown> -->
 <link rel="stylesheet" type="text/css" href="css/msdropdown/dd.css" />
 <script src="js/msdropdown/jquery.dd.min.js"></script>
@@ -132,10 +131,16 @@ display:inline;
           </div>
                   
 	
-
+ <a href="#" title="Header" data-toggle="popover" data-trigger="hover" data-content="Some content">Hover over me</a>
         </form></div>
         </div>
 
+<script type="text/javascript">
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();   
+});
+
+</script>
         <script>
 $(document).ready(function() {
 	$("#countries").msDropdown();

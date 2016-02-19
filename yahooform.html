@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Form</title>
+	<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="http://www.marghoobsuleman.com/misc/jquery.js"></script>
+<!-- <msdropdown> -->
+<link rel="stylesheet" type="text/css" href="css/msdropdown/dd.css" />
+<script src="js/msdropdown/jquery.dd.min.js"></script>
+<!-- </msdropdown> -->
+<link rel="stylesheet" type="text/css" href="css/msdropdown/flags.css" />
+</head>
+<style>
+input:invalid {
+    border-color: #dd1037;
+}
+input {
+	height:37px;width:320px;font-size: 16px;font-weight: 300;margin-bottom: 3%;
+
+border-radius: 2px;
+display:inline;
+border:solid 1px #E5E5E5;
+display:inline;
+}
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #8F8F8F;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #8F8F8F;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #8F8F8F;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #8F8F8F;
+}
+:placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+  color:    #8F8F8F;
+}
+</style>
+<body>
+
+<div  class="container row" style="margin-top: 10%">
+<div class="col-sm-8 col-sm-offset-5" style="background:#FAFAFA">
+<h1 style="font-size: 30px;">Sign up</h1><br>
+		<form ng-app="myApp" ng-controller="validateCtrl" name="myForm">
+		  
+				<div class='input-container'>
+			  <div class='row input-row clrfix'>
+				
+				        				
+				        <input name='first' pattern=[A-Za-z]{3,} class="col-md-5 col-md-offset-1" value='' placeholder='First name' title='First name' type='text' id='first-name' autocorrect='off' autocapitalize='off' autocomplete='off' maxlength='32' aria-required='true' aria-describedby='name-validation-message' autofocus style="height:37px;width:320px;font-size: 16px;font-weight: 300;" ng-model="first" required/>
+				        <span style="color:red" ng-show="myForm.first.$dirty && myForm.first.$invalid">
+						<span ng-show="myForm.first.$error.required">First name is required.</span>
+						</span>
+				
+				        				
+				
+				<input name='lastname' pattern=[A-Za-z]{3,} class="col-md-5 col-md-offset-1" value='' placeholder='Last name' title='Last name' type='text' id='last-name' autocorrect='off' autocapitalize='off' autocomplete='off' maxlength='32' aria-required='true' aria-describedby='name-validation-message' style="height:37px;width:320px;font-size: 16px;font-weight: 300;margin-left: 1%" ng-model="lastname" required/>
+				        <span style="color:red" ng-show="myForm.lastname.$dirty && myForm.lastname.$invalid">
+						<span ng-show="myForm.lastname.$error.required">Last name is required.</span>
+						</span>				     
+			  </div>
+			  <p class='validation-message' id='name-validation-message'></p>
+
+
+			  <div class='row input-row' dir='ltr'>
+		      <label for='user-name' class='clipped'></label>
+			    <input  name='email' value='' type="email" placeholder='Enter your email' title='' type='text' id='user-name' class=' col-md-5 col-md-offset-1' autocorrect='off' autocapitalize='off' autocomplete='off' maxlength='32' aria-required='true' aria-describedby='id-validation-message' aria-haspopup="true" dir='ltr' required style="width:650px" ng-model="email"/>
+				        <span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+						<span ng-show="myForm.email.$error.required">Email is required.</span>
+						</span>
+			    <div class='row suggestion-row'>
+			      <ul class='suggestions' id='suggestions' role='menu'>
+				
+			      </ul>
+			    </div>
+			
+              </div>
+			  
+			  <div class='row input-row'>
+		      
+			    <input  type='password' pattern={8,} name='password' placeholder='Password' title='Password' id='password' class='col-md-5 col-md-offset-1' autocorrect='off' autocapitalize='off' autocomplete='off' maxlength='32' aria-required='true' aria-describedby='password-validation-message' style="width:650px"  required /><br><br>
+			    </div>
+
+			    <div class="row input-row">
+			    <input  type='password' name='password' pattern={8,12} placeholder='Please confirm password' title='Password' class=' col-md-5 col-md-offset-1' id='password' autocorrect='off' autocapitalize='off' autocomplete='off' maxlength='32' aria-required='true' aria-describedby='password-validation-message' style="width:650px" required  />
+			
+			
+			  </div>
+			    <p class='validation-message force-hide' id='password-validation-message'></p>
+			
+			  
+					<div class="row input-row">
+			       <select name="countries" id="countries" style="width:120px;margin-left: 9%	;background-color: #fff">
+						<option value='sl' data-title="select" selected="selected" style="font-size: 1.15em;">&nbsp;&nbsp;&nbsp;&nbsp; Select</option>
+						<option value='au' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag au" data-title="Australia">AU +61</option>
+						<option value='ca' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag ca" data-title="Canada">CA +1</option>
+						<option value='in' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag in" data-title="India" >IN +91</option>
+					    <option value='nz' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag nz" data-title="New Zealand">NZ +63</option>
+					    <option value='sg' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag sg" data-title="Singapore">SG +65</option>
+					    <option value='uk' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag uk" data-title="United Kingdom">UK +44</option>
+					    <option value='us' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag us" data-title="United States">US+1</option>
+					    <option value='ot'  data-title="Other">Other</option>
+					</select>
+					            
+					             <input  id="mobile" name='mobile' value='' placeholder='Mobile number' autocorrect="off" autocapitalize="off" autocomplete="off" maxlength="15" aria-required="true" aria-describedby="mobile-validation-message" type="text" pattern=[0-9]{10,15} required ng-model="mobile"/>
+				        <span style="color:red" ng-show="myForm.mobile.$dirty && myForm.mobile.$invalid">
+						<span ng-show="myForm.mobile.$error.required">Mobile no. is required.</span>
+						</span>
+					            
+					</div>
+					<div class="row">
+						<input type="checkbox" style="height: 15px;width: 15px;margin-right: 1%;margin-left: 9%" required  ><lable>I agree to the Terms and Conditions.</lable><br>
+
+					</div>
+
+
+          <div class="row">
+          	<br>
+          	<button class="col-md-3 col-md-offset-5" style="color:white;background:#400090;border-radius: 5px;height: 46px;width: 150px;font-size: 1.15em" value='Create account'> Create Account</button>
+          </div>  
+          
+          </div>
+                  
+	
+
+        </form></div>
+        </div>
+
+        <script>
+$(document).ready(function() {
+	$("#countries").msDropdown();
+})
+</script>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('validateCtrl', function($scope) {
+
+});
+</script>
+<script type="text/javascript">
+	function checkPass()
+{
+    //Store the password field objects into variables ...
+    var pass1 = document.getElementById('pass1');
+    var pass2 = document.getElementById('pass2');
+    //Store the Confimation Message Object ...
+    var message = document.getElementById('confirmMessage');
+    //Set the colors we will be using ...
+    var goodColor = "#66cc66";
+    var badColor = "#ff6666";
+    //Compare the values in the password field 
+    //and the confirmation field
+    if(pass1.value == pass2.value){
+        //The passwords match. 
+        //Set the color to the good color and inform
+        //the user that they have entered the correct password 
+        pass2.style.backgroundColor = goodColor;
+        message.style.color = goodColor;
+        message.innerHTML = "Passwords Match!"
+    }else{
+        //The passwords do not match.
+        //Set the color to the bad color and
+        //notify the user.
+        pass2.style.backgroundColor = badColor;
+        message.style.color = badColor;
+        message.innerHTML = "Passwords Do Not Match!"
+    }
+}  
+</script>
+<div class="tutorialWrapper">
+    <form>
+        <div class="fieldWrapper">
+            <label for="pass1">Password:</label>
+            <input type="password" name="pass1" id="pass1">
+        </div>
+        <div class="fieldWrapper">
+            <label for="pass2">Confirm Password:</label>
+            <input type="password" name="pass2" id="pass2" onkeyup="checkPass(); return false;">
+            <span id="confirmMessage" class="confirmMessage"></span>
+        </div>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Countries list</title>
+	<script src="http://www.marghoobsuleman.com/misc/jquery.js"></script>
+<!-- <msdropdown> -->
+<link rel="stylesheet" type="text/css" href="css/msdropdown/dd.css" />
+<script src="js/msdropdown/jquery.dd.min.js"></script>
+<!-- </msdropdown> -->
+<link rel="stylesheet" type="text/css" href="css/msdropdown/flags.css" />
+</head>
+<body>
+<select name="countries" id="countries" style="width:120px;">
+<option value='sl' data-title="select">-select-</option>
+<option value='au' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag au" data-title="Australia">AU +61</option>
+<option value='ca' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag ca" data-title="Canada">CA +1</option>
+<option value='in' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag in" data-title="India" selected="selected">IN +91</option>
+  <option value='nz' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag nz" data-title="New Zealand">NZ +63</option>
+  <option value='sg' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag sg" data-title="Singapore">SG +65</option>
+  <option value='uk' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag uk" data-title="United Kingdom">UK +44</option>
+  <option value='us' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag us" data-title="United States">US+1</option>
+  <option value='ot'  data-title="Other">Other</option>
+</select>
+<script>
+$(document).ready(function() {
+	$("#countries").msDropdown();
+})
+</script>
+</body>
+</html>

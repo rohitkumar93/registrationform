@@ -91,7 +91,8 @@ display:inline;
 			    </div>
 
 			    <div class="row input-row">
-			    <input  type='password' name='password' pattern={8,12} placeholder='Please confirm password' title='Password' class=' col-md-5 col-md-offset-1' id='password' autocorrect='off' autocapitalize='off' autocomplete='off' maxlength='32' aria-required='true' aria-describedby='password-validation-message' style="width:650px" required  />
+			    <input  type='password' name='password1' pattern={8,12} placeholder='Please confirm password' title='Minimum 8 characters' class=' col-md-5 col-md-offset-1' id='password1' autocorrect='off' autocapitalize='off' autocomplete='off' maxlength='32' aria-required='true' aria-describedby='password-validation-message' style="width:650px" required  onkeyup="checkPass(); return false;"/>
+			    <span id="confirmMessage" class="confirmMessage col-md-offset-1" ></span>
 			
 			
 			  </div>
@@ -157,8 +158,8 @@ app.controller('validateCtrl', function($scope) {
 	function checkPass()
 {
     //Store the password field objects into variables ...
-    var pass1 = document.getElementById('pass1');
-    var pass2 = document.getElementById('pass2');
+    var pass1 = document.getElementById('password');
+    var pass2 = document.getElementById('password1');
     //Store the Confimation Message Object ...
     var message = document.getElementById('confirmMessage');
     //Set the colors we will be using ...
@@ -191,7 +192,7 @@ app.controller('validateCtrl', function($scope) {
         </div>
         <div class="fieldWrapper">
             <label for="pass2">Confirm Password:</label>
-            <input type="password" name="pass2" id="pass2" onkeyup="checkPass(); return false;">
+            <input type="password" name="pass2" id="pass2"  onkeyup="checkPass(); return false;">
             <span id="confirmMessage" class="confirmMessage"></span>
         </div>
     </form>
